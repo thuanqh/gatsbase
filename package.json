@@ -1,0 +1,21 @@
+{
+  "name": "gatsbase",
+  "version": "1.0.0",
+  "description": "Gatsby Boilerplate",
+  "main": "index.js",
+  "repository": "https://thuanqh@github.com/thuanqh/gatsbase.git",
+  "author": "Jason Quach <jason@lungvang.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .cache node_modules public package-lock.json yarn.lock",
+    "dev": "gatsby develop",
+    "start": "npm run dev",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.59",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
