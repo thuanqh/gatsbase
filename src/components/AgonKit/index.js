@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import {
   space,
@@ -193,22 +194,122 @@ Card.propTypes = {
   ...cards.propTypes
 };
 
-export const Container = styled(Box)({
-  maxWidth: "1024px"
-});
+export const Container = props => (
+  <Box
+    {...props}
+    mx="auto"
+    css={{
+      maxWidth: "1024px"
+    }}
+  />
+);
 
-Container.defaultProps = {
-  mx: "auto"
-};
+export const Badge = props => (
+  <Card
+    color="white"
+    bg="blue"
+    {...props}
+    px={3}
+    py={1}
+    borderRadius={9999}
+    css={{
+      display: "inline-block"
+    }}
+  />
+);
 
-export const Badge = styled(Card)({
-  display: "inline-block"
-});
+export const Avatar = props => (
+  <Image width={48} height={48} borderRadius={9999} {...props} />
+);
 
-Badge.defaultProps = {
-  color: "white",
-  bg: "blue",
-  px: 3,
-  py: 1,
-  borderRadius: "9999"
-};
+export const BlockLink = props => (
+  <Link
+    color="inherit"
+    {...props}
+    css={{
+      display: "block",
+      textDecoration: "none"
+    }}
+  />
+);
+
+export const NavLink = props => (
+  <Link
+    px={2}
+    py={1}
+    color="inherit"
+    {...props}
+    css={{
+      display: "block",
+      fontWeight: "bold"
+    }}
+  />
+);
+
+export const Embed = props => (
+  <Box
+    {...props}
+    width={1}
+    css={{
+      height: 0,
+      paddingBottom: 9 / 16 + "%",
+      position: "relative",
+      overflow: "hidden",
+      "& > iframe": {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        bottom: 0,
+        left: 0,
+        border: 0
+      }
+    }}
+  />
+);
+
+export const Pre = props => (
+  <Text
+    {...props}
+    as="pre"
+    fontFamily="Menlo, monospace"
+    p={2}
+    bg="lightgray"
+  />
+);
+
+export const Fixed = props => (
+  <Box
+    {...props}
+    css={{
+      position: "fixed"
+    }}
+  />
+);
+
+export const Divider = props => (
+  <Box
+    {...props}
+    as="hr"
+    bg="gray"
+    css={{
+      border: 0,
+      height: 1
+    }}
+  />
+);
+
+export const Caps = props => (
+  <Text
+    fontSize={1}
+    {...props}
+    css={{
+      textTransform: "uppercase",
+      letterSpacing: "0.2em"
+    }}
+  />
+);
+
+export const Toolbar = props => (
+  <Flex px={2} color="white" bg="black" alignItems="center" {...props} />
+);
