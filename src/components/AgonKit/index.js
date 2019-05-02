@@ -1,3 +1,4 @@
+export { default as theme } from "./theme";
 export {
   Box,
   Flex,

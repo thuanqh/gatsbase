@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
+import { ThemeProvider } from "styled-components";
 
-import { Box } from "../AgonKit";
+import GlobalStyles from "../../utils/global-styles";
+import { Box, theme } from "../AgonKit";
 import Header from "../Header";
 
 const Layout = ({ children }) => (
@@ -17,17 +19,20 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Box>
-          <main>{children}</main>
-        </Box>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.lungvang.com">Lung Vang</a>
-        </footer>
-      </>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyles />
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <Box>
+            <main>{children}</main>
+          </Box>
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.lungvang.com">Lung Vang</a>
+          </footer>
+        </>
+      </ThemeProvider>
     )}
   />
 );

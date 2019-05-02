@@ -12,7 +12,6 @@ export default () => (
       py={6}
       backgroundImage="url(https://source.unsplash.com/random/1024x768)"
       backgroundSize="cover"
-      borderRadius={8}
       color="white"
       bg="darkgray"
     >
