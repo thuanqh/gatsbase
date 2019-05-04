@@ -228,6 +228,7 @@ export const Avatar = props => (
 export const BlockLink = props => (
   <Link
     color="inherit"
+    display="block"
     {...props}
     css={{
       textDecoration: "none"
@@ -240,6 +241,7 @@ export const NavLink = props => (
     px={2}
     py={1}
     color="inherit"
+    display="inline-block"
     {...props}
     css={{
       fontWeight: "bold",

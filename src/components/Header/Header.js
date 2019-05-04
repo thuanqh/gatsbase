@@ -10,12 +10,22 @@ const Header = ({ siteTitle }) => (
         <Link to="/">{siteTitle}</Link>
       </Heading>
     </Box>
-    <Box as="nav" display={["none", "block"]} mx="auto">
-      <NavLink href="/consulting">Consulting</NavLink>
-      <NavLink href="/studio">Studio</NavLink>
-      <NavLink href="/craftsman">Craftsman</NavLink>
-      <NavLink herf="/news">News</NavLink>
-      <NavLink herf="/about">About</NavLink>
+    <Box as="nav" mx="auto">
+      <NavLink display={["none", "none", "inline-block"]} href="/consulting">
+        Consulting
+      </NavLink>
+      <NavLink display={["none", "none", "inline-block"]} href="/studio">
+        Studio
+      </NavLink>
+      <NavLink display={["none", "none", "inline-block"]} href="/craftsman">
+        Craftsman
+      </NavLink>
+      <NavLink display={["none", "none", "inline-block"]} herf="/news">
+        News
+      </NavLink>
+      <NavLink display={["none", "none", "inline-block"]} herf="/about">
+        About
+      </NavLink>
     </Box>
     <Box>
       <Button variant="outline">Start A Project</Button>
