@@ -10,6 +10,7 @@ import {
   lineHeight,
   fontWeight,
   letterSpacing,
+  display,
   height,
   alignItems,
   justifyContent,
@@ -44,6 +45,7 @@ export const Box = styled("div")(
   flex,
   order,
   alignSelf,
+  display,
   themed("Box")
 );
 
@@ -54,7 +56,8 @@ Box.propTypes = {
   ...color.propTypes,
   ...flex.propTypes,
   ...order.propTypes,
-  ...alignSelf.propTypes
+  ...alignSelf.propTypes,
+  ...display.propTypes
 };
 
 export const Flex = styled(Box)(
@@ -227,7 +230,6 @@ export const BlockLink = props => (
     color="inherit"
     {...props}
     css={{
-      display: "block",
       textDecoration: "none"
     }}
   />
@@ -240,8 +242,8 @@ export const NavLink = props => (
     color="inherit"
     {...props}
     css={{
-      display: "block",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      textDecoration: "none"
     }}
   />
 );
