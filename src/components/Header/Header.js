@@ -30,9 +30,6 @@ const Header = ({ siteTitle }) => (
       <Box display={["none", "none", "inline-block"]}>
         <Button variant="outline">Start A Project</Button>
       </Box>
-      <Box display={["none", "none", "inline-block"]}>
-        <Button>Hire Craftsman</Button>
-      </Box>
     </Box>
     <Box display={["block", "block", "none"]}>
       <ThMenu size="32" title="Menu" />
