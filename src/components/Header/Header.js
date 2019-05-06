@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { ThMenu } from "styled-icons/typicons/ThMenu";
 
 import { Flex, Box, Heading, Link, NavLink, Button } from "../AgonKit";
 
@@ -10,7 +11,7 @@ const Header = ({ siteTitle }) => (
         <Link to="/">{siteTitle}</Link>
       </Heading>
     </Box>
-    <Box as="nav" mx="auto">
+    <Box as="nav" ml="auto">
       <NavLink display={["none", "none", "inline-block"]} href="/consulting">
         Consulting
       </NavLink>
@@ -26,9 +27,15 @@ const Header = ({ siteTitle }) => (
       <NavLink display={["none", "none", "inline-block"]} herf="/about">
         About
       </NavLink>
+      <Box display={["none", "none", "inline-block"]}>
+        <Button variant="outline">Start A Project</Button>
+      </Box>
+      <Box display={["none", "none", "inline-block"]}>
+        <Button>Hire Craftsman</Button>
+      </Box>
     </Box>
-    <Box>
-      <Button variant="outline">Start A Project</Button>
+    <Box display={["block", "block", "none"]}>
+      <ThMenu size="32" title="Menu" />
     </Box>
   </Flex>
 );
