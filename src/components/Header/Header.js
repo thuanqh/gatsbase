@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { ThMenu } from "styled-icons/typicons/ThMenu";
+import { Times } from "styled-icons/typicons/Times";
 
 import {
   Container,
@@ -13,7 +14,7 @@ import {
 } from "../AgonKit";
 
 const Header = ({ siteTitle }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>
       <Flex m={2} alignItems="center">
@@ -52,6 +53,23 @@ const Header = ({ siteTitle }) => {
           <ThMenu size="32" title="Menu" />
         </Box>
       </Flex>
+      <Box
+        color="white"
+        bg="black"
+        width={[1, 1 / 2, 1 / 4]}
+        display={isOpen ? "block" : "none"}
+        css={{
+          height: "100%",
+          position: "fixed",
+          top: "0",
+          right: "0"
+        }}
+      >
+        Sidebar
+        <Box onClick={() => setIsOpen(!isOpen)}>
+          <Times size="32" title="Close" />
+        </Box>
+      </Box>
     </Container>
   );
 };
