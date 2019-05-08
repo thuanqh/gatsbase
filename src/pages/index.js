@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { Card, Heading } from "../components/AgonKit";
 import useEventListener from "../hooks/use-event-listener";
-import useScript from "../hooks/use-script";
 
 export default () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -17,10 +16,6 @@ export default () => {
   );
 
   useEventListener("mousemove", handler);
-
-  const [loaded, error] = useScript(
-    "https://pm28k14qlj.codesandbox.io/test-external-script.js"
-  );
 
   return (
     <Layout>
@@ -40,16 +35,6 @@ export default () => {
           The mouse position is ({coords.x}, {coords.y})
         </Heading>
       </Card>
-      <div>
-        <div>
-          Script loaded: <b>{loaded.toString()}</b>
-        </div>
-        {loaded && !error && (
-          <div>
-            Script function call response: <b>{TEST_SCRIPT.start()}</b>
-          </div>
-        )}
-      </div>
     </Layout>
   );
 };
