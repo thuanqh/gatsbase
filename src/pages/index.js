@@ -27,9 +27,6 @@ export default () => {
         backgroundSize="cover"
         color="white"
         bg="darkgray"
-        css={{
-          height: "100vh"
-        }}
       >
         <Heading textAlign="center" fontSize={[5, 6]}>
           The mouse position is ({coords.x}, {coords.y})
