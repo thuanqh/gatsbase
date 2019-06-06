@@ -21,15 +21,32 @@ export default () => {
     <Layout>
       <SEO title="Home" keywords={[`lungvang`, `application`, `react`]} />
       <Box
-        p={5}
         color="white"
         bg="grey.900"
         height="100vh"
-        backgroundImage="url(https://source.unsplash.com/random/1024x768)"
+        backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://source.unsplash.com/random/1024x768)"
         backgroundSize="cover"
         backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        position="relative"
       >
-        Main Page {coords.x}, {coords.y}
+        <Box position="absolute" top="0" left="16px">
+          <p>Lung Vang</p>
+        </Box>
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          textAlign="center"
+          css={{ transform: "translate(-50%, -50%)" }}
+        >
+          <p>
+            Main Page {coords.x}, {coords.y}
+          </p>
+        </Box>
+        <Box position="absolute" bottom="0" left="16px">
+          <p>Some Text</p>
+        </Box>
       </Box>
     </Layout>
   );
