@@ -5,8 +5,6 @@ import { ThemeProvider } from "styled-components";
 
 import GlobalStyles from "../../utils/global-styles";
 import { Box, theme } from "../AgonKit";
-import Header from "../Header";
-import Footer from "../Footer";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -23,9 +21,7 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyles />
-          <Header siteTitle={data.site.siteMetadata.title} />
           <Box as="main">{children}</Box>
-          <Footer />
         </>
       </ThemeProvider>
     )}

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Card, Heading } from "../components/AgonKit";
+import { Box } from "../components/AgonKit";
 import useEventListener from "../hooks/use-event-listener";
 
 export default () => {
@@ -20,18 +20,17 @@ export default () => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`lungvang`, `application`, `react`]} />
-      <Card
-        p={4}
-        py={6}
+      <Box
+        p={5}
+        color="white"
+        bg="grey.900"
+        height="100vh"
         backgroundImage="url(https://source.unsplash.com/random/1024x768)"
         backgroundSize="cover"
-        color="white"
-        bg="darkgray"
+        backgroundPosition="center"
       >
-        <Heading textAlign="center" fontSize={[5, 6]}>
-          The mouse position is ({coords.x}, {coords.y})
-        </Heading>
-      </Card>
+        Main Page {coords.x}, {coords.y}
+      </Box>
     </Layout>
   );
 };
