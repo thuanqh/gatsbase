@@ -15,7 +15,8 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^2.8.2",
+    "@styled-system/prop-types": "^5.0.5",
+    "gatsby": "^2.8.4",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
@@ -31,7 +32,7 @@
     "react-helmet": "^5.2.1",
     "styled-components": "^4.2.1",
     "styled-icons": "^8.0.0",
-    "styled-system": "^4.2.4"
+    "styled-system": "^5.0.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.9.0",
