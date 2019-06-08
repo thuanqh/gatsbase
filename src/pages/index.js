@@ -31,7 +31,10 @@ export default () => {
         position="relative"
       >
         <Box position="absolute" top="0" left="16px">
-          <p>Lung Vang</p>
+          <p>Logo</p>
+        </Box>
+        <Box position="absolute" top="0" right="16px">
+          <p>Menu</p>
         </Box>
         <Box
           position="absolute"
