@@ -34,7 +34,14 @@ export default () => {
           <p>Logo</p>
         </Box>
         <Box position="absolute" top="0" right="16px">
-          <p>Menu</p>
+          <Box display="inline-block" my="6px">
+            Menu
+          </Box>
+          <Box display="inline-block" my="6px">
+            <Box width="35px" height="5px" bg="white" m="6px 0" />
+            <Box width="35px" height="5px" bg="white" m="6px 0" />
+            <Box width="35px" height="5px" bg="white" m="6px 0" />
+          </Box>
         </Box>
         <Box
           position="absolute"
