@@ -109,15 +109,46 @@ const letterSpacings = {
  */
 const radii = [0, 2, 4, 8, 16];
 
+const textStyles = {
+  caps: {
+    textTransform: "uppercase",
+    letterSpacing: letterSpacings.caps
+  }
+};
+
+const colorStyles = {
+  warning: {
+    color: "black",
+    backgroundColor: colors.yellow[500]
+  },
+  error: {
+    color: "white",
+    backgroundColor: colors.red[500]
+  }
+};
+
 const buttons = {
   primary: {
-    color: "#fff",
-    backgroundColor: colors.primary[900]
+    color: "white",
+    backgroundColor: colors.primary[900],
+    "&:hover": {
+      backgroundColor: colors.primary[400]
+    }
   },
   outline: {
     color: colors.primary[900],
     backgroundColor: "transparent",
-    boxShadow: "inset 0 0 0 1px"
+    boxShadow: "inset 0 0 0 1px",
+    "&:hover": {
+      backgroundColor: colors.primary[400]
+    }
+  }
+};
+
+const cards = {
+  normal: {
+    color: "white",
+    backgroundColor: colors.primary[900]
   }
 };
 
@@ -131,5 +162,8 @@ export default {
   fontWeights,
   letterSpacings,
   radii,
-  buttons
+  textStyles,
+  colorStyles,
+  buttons,
+  cards
 };

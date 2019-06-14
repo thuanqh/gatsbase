@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Box } from "../components/AgonKit";
+import { Box, Text, Heading, Flex } from "../components/AgonKit";
 import useEventListener from "../hooks/use-event-listener";
 
 export default () => {
@@ -31,18 +31,16 @@ export default () => {
         position="relative"
       >
         <Box position="absolute" top="0" left="16px">
-          <p>Logo</p>
+          <Heading>Lung Vang</Heading>
         </Box>
-        <Box position="absolute" top="0" right="16px">
-          <Box display="inline-block" my="6px">
-            Menu
-          </Box>
-          <Box display="inline-block" my="6px">
+        <Flex position="absolute" top="0" right="16px">
+          <Box>Menu</Box>
+          <Box>
             <Box width="35px" height="5px" bg="white" m="6px 0" />
             <Box width="35px" height="5px" bg="white" m="6px 0" />
             <Box width="35px" height="5px" bg="white" m="6px 0" />
           </Box>
-        </Box>
+        </Flex>
         <Box
           position="absolute"
           top="50%"
@@ -50,12 +48,12 @@ export default () => {
           textAlign="center"
           css={{ transform: "translate(-50%, -50%)" }}
         >
-          <p>
+          <Heading>
             Main Page {coords.x}, {coords.y}
-          </p>
+          </Heading>
         </Box>
         <Box position="absolute" bottom="0" left="16px">
-          <p>Some Text</p>
+          <Text>Some Text</Text>
         </Box>
       </Box>
     </Layout>

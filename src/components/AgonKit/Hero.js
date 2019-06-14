@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Box from "./Box";
 
 export const Hero = ({ slides }) => {
   const [curr, setCurr] = useState(0);
@@ -20,7 +21,7 @@ export const Hero = ({ slides }) => {
   }
 
   return (
-    <section className="slider">
+    <Box position="relative" height="100vh">
       {slides.map((s, i) => (
         <div
           className={i === curr ? "slide active" : "slide"}
@@ -32,11 +33,11 @@ export const Hero = ({ slides }) => {
             <h2>{s.subtitle}</h2>
           </div>
           {i === curr && (
-            <img className="image" src={s.image} alt={`Image for ${s.title}`} />
+            <img className="image" src={s.image} alt={`${s.title}`} />
           )}
         </div>
       ))}
-    </section>
+    </Box>
   );
 };
 
