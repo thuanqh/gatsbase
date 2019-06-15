@@ -30,6 +30,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-spring": "^8.0.25",
     "styled-components": "^4.3.1",
     "styled-icons": "^8.1.0",
     "styled-system": "^5.0.6"
