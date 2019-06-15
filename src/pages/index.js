@@ -2,11 +2,28 @@ import React, { useState, useCallback } from "react";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Box, Text, Heading, Flex } from "../components/AgonKit";
+import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
 import useEventListener from "../hooks/use-event-listener";
+import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
+import useKeyPress from "../hooks/use-key-press";
+
+const Counter = React.memo(props => {
+  useWhyDidYouUpdate("Counter", props);
+  return (
+    <Box color="red.900" fontSize="3rem">
+      {props.count}
+    </Box>
+  );
+});
 
 export default () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [count, setCount] = useState(0);
+  const [userId, setUserId] = useState(0);
+  const happyPress = useKeyPress("h");
+  const sadPress = useKeyPress("s");
+  const robotPress = useKeyPress("r");
+  const foxPress = useKeyPress("f");
 
   const handler = useCallback(
     ({ clientX, clientY }) => {
@@ -23,7 +40,7 @@ export default () => {
       <Box
         color="white"
         bg="grey.900"
-        height="100vh"
+        height="50vh"
         backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://source.unsplash.com/random/1024x768)"
         backgroundSize="cover"
         backgroundPosition="center"
@@ -54,6 +71,25 @@ export default () => {
         </Box>
         <Box position="absolute" bottom="0" left="16px">
           <Text>Some Text</Text>
+        </Box>
+      </Box>
+      <Box>
+        <Box>
+          <Counter count={count} />
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </Box>
+        <Box>
+          <Image src={`http://i.pravatar.cc/80?img=${userId}`} />
+          <button onClick={() => setUserId(userId + 1)}>Switch User</button>
+        </Box>
+      </Box>
+      <Box>
+        <Box>h, s, r, f</Box>
+        <Box>
+          {happyPress && "😊"}
+          {sadPress && "😢"}
+          {robotPress && "🤖"}
+          {foxPress && "🦊"}
         </Box>
       </Box>
     </Layout>
