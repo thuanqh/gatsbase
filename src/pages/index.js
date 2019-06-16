@@ -6,6 +6,7 @@ import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
 import useEventListener from "../hooks/use-event-listener";
 import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
 import useKeyPress from "../hooks/use-key-press";
+import useLockBodyScroll from "../hooks/use-lock-body-scroll";
 
 const Counter = React.memo(props => {
   useWhyDidYouUpdate("Counter", props);
@@ -16,10 +17,24 @@ const Counter = React.memo(props => {
   );
 });
 
+function Modal({ title, content, onClose }) {
+  useLockBodyScroll();
+
+  return (
+    <Box onClick={onClose}>
+      <Box>
+        <Heading>{title}</Heading>
+        <Text>{content}</Text>
+      </Box>
+    </Box>
+  );
+}
+
 export default () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [count, setCount] = useState(0);
   const [userId, setUserId] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
   const happyPress = useKeyPress("h");
   const sadPress = useKeyPress("s");
   const robotPress = useKeyPress("r");
@@ -91,6 +106,16 @@ export default () => {
           {robotPress && "🤖"}
           {foxPress && "🦊"}
         </Box>
+      </Box>
+      <Box>
+        <button onClick={() => setModalOpen(true)}>Show Modal</button>
+        {modalOpen && (
+          <Modal
+            title="Try scrolling"
+            content="I bet you can't! Muahahaha 😈"
+            onClose={() => setModalOpen(false)}
+          />
+        )}
       </Box>
     </Layout>
   );
