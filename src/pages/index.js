@@ -35,6 +35,7 @@ export default () => {
   const [count, setCount] = useState(0);
   const [userId, setUserId] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [color, setColor] = useState("transparent");
   const happyPress = useKeyPress("h");
   const sadPress = useKeyPress("s");
   const robotPress = useKeyPress("r");
@@ -47,7 +48,22 @@ export default () => {
     [setCoords]
   );
 
+  const changeColor = () => {
+    if (
+      document.documentElement.scrollTop > 99 ||
+      document.body.scrollTop > 99
+    ) {
+      setColor("transparent");
+    } else if (
+      document.documentElement.scrollTop < 100 ||
+      document.body.scrollTop < 100
+    ) {
+      setColor("primary.900");
+    }
+  };
+
   useEventListener("mousemove", handler);
+  useEventListener("scroll", changeColor);
 
   return (
     <Layout>
@@ -55,7 +71,7 @@ export default () => {
       <Box
         color="white"
         bg="grey.900"
-        height="50vh"
+        height="100vh"
         backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://source.unsplash.com/random/1024x768)"
         backgroundSize="cover"
         backgroundPosition="center"
@@ -65,7 +81,7 @@ export default () => {
         <Box position="absolute" top="0" left="16px">
           <Heading>Lung Vang</Heading>
         </Box>
-        <Flex position="absolute" top="0" right="16px">
+        <Flex position="absolute" top="0" right="16px" bg={color}>
           <Box>Menu</Box>
           <Box>
             <Box width="35px" height="5px" bg="white" m="6px 0" />
