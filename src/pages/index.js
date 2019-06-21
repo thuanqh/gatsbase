@@ -2,7 +2,10 @@ import React, { useState, useCallback } from "react";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+
 import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
+import MenuButton from "../components/MenuButton";
+
 import useEventListener from "../hooks/use-event-listener";
 import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
 import useKeyPress from "../hooks/use-key-press";
@@ -21,12 +24,22 @@ function Modal({ title, content, onClose }) {
   useLockBodyScroll();
 
   return (
-    <Box onClick={onClose}>
-      <Box>
+    <Flex
+      bg="rgba(0, 0, 0, 0.65)"
+      onClick={onClose}
+      position="fixed"
+      top="0"
+      left="0"
+      height="100%"
+      width="100%"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box bg="white" px="2rem" py="3rem" textAlign="center" borderRadius="3px">
         <Heading>{title}</Heading>
         <Text>{content}</Text>
       </Box>
-    </Box>
+    </Flex>
   );
 }
 
@@ -81,14 +94,7 @@ export default () => {
         <Box position="absolute" top="0" left="16px">
           <Heading>Lung Vang</Heading>
         </Box>
-        <Flex position="absolute" top="0" right="16px" bg={color}>
-          <Box>Menu</Box>
-          <Box>
-            <Box width="35px" height="5px" bg="white" m="6px 0" />
-            <Box width="35px" height="5px" bg="white" m="6px 0" />
-            <Box width="35px" height="5px" bg="white" m="6px 0" />
-          </Box>
-        </Flex>
+        <MenuButton />
         <Box
           position="absolute"
           top="50%"
