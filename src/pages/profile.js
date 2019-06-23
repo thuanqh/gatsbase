@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Box, Heading, Text } from "../components/AgonKit";
+import { Box, Flex, Heading, Text, Spacer } from "../components/AgonKit";
 
 const Profile = () => {
   return (
@@ -16,8 +16,23 @@ const Profile = () => {
         position="relative"
         textAlign="center"
       >
-        <Heading>We make corperates innovate like startups.</Heading>
-        <Text>Welcome to Lung Vang</Text>
+        <Flex>
+          <Box m={4}>
+            <Heading>Lung Vang</Heading>
+          </Box>
+          <Spacer m="auto" />
+          <Box m={4}>Menu</Box>
+        </Flex>
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          textAlign="center"
+          css={{ transform: "translate(-50%, -50%)" }}
+        >
+          <Heading>We make corperates innovate like startups.</Heading>
+          <Text>Welcome to Lung Vang</Text>
+        </Box>
       </Box>
     </Layout>
   );

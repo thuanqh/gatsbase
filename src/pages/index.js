@@ -3,8 +3,9 @@ import React, { useState, useCallback } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
-import MenuButton from "../components/MenuButton";
+import { Box, Text, Heading, Flex, Image, Spacer } from "../components/AgonKit";
+
+import { Menu } from "styled-icons/boxicons-regular/Menu";
 
 import useEventListener from "../hooks/use-event-listener";
 import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
@@ -66,12 +67,12 @@ export default () => {
       document.documentElement.scrollTop > 99 ||
       document.body.scrollTop > 99
     ) {
-      setColor("transparent");
+      setColor("primary.900");
     } else if (
       document.documentElement.scrollTop < 100 ||
       document.body.scrollTop < 100
     ) {
-      setColor("primary.900");
+      setColor("transparent");
     }
   };
 
@@ -91,10 +92,15 @@ export default () => {
         backgroundRepeat="no-repeat"
         position="relative"
       >
-        <Box position="absolute" top="0" left="16px">
-          <Heading>Lung Vang</Heading>
-        </Box>
-        <MenuButton />
+        <Flex bg={color} position="fixed" top="0" left="0" width="100%">
+          <Box m={3} py={2} height="48px">
+            <Heading textAlign="center">Lung Vang</Heading>
+          </Box>
+          <Spacer m="auto" />
+          <Box m={3} css={{ cursor: "pointer" }}>
+            <Menu size="48" />
+          </Box>
+        </Flex>
         <Box
           position="absolute"
           top="50%"
