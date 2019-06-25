@@ -83,6 +83,8 @@ const colors = {
  */
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 
+const sizes = [360, 480, 640]
+
 /**
  * Typographic scale
  */
@@ -157,6 +159,7 @@ export default {
   mediaQueries,
   colors,
   space,
+  sizes,
   fontSizes,
   lineHeights,
   fontWeights,
