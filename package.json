@@ -16,11 +16,7 @@
   },
   "dependencies": {
     "@styled-system/prop-types": "^5.0.21",
-<<<<<<< HEAD
-    "gatsby": "^2.13.57",
-=======
     "gatsby": "^2.13.58",
->>>>>>> Update package.json
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-offline": "^2.2.5",
@@ -41,16 +37,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-<<<<<<< HEAD
-    "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.0",
-    "eslint-plugin-flowtype": "^4.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-=======
-    "eslint-config-react-app": "^5.0.0",
->>>>>>> Update package.json
     "eslint-plugin-react-hooks": "^1.7.0",
     "stylelint": "^10.1.0",
     "stylelint-config-recommended": "^2.2.0",
