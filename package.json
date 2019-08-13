@@ -15,8 +15,8 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@styled-system/prop-types": "^5.0.21",
-    "gatsby": "^2.13.58",
+    "@styled-system/prop-types": "^5.1.0",
+    "gatsby": "^2.13.61",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-offline": "^2.2.5",
@@ -33,7 +33,7 @@
     "react-spring": "^8.0.27",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.3.0",
-    "styled-system": "^5.0.21"
+    "styled-system": "^5.1.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.6",
