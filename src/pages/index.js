@@ -50,6 +50,7 @@ export default () => {
   const [userId, setUserId] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [color, setColor] = useState("transparent");
+
   const happyPress = useKeyPress("h");
   const sadPress = useKeyPress("s");
   const robotPress = useKeyPress("r");
