@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 import { Box, Text, Heading, Flex, Image, Spacer } from "../components/AgonKit";
+import Sidebar from "../components/Sidebar";
 
 import { Menu } from "styled-icons/boxicons-regular/Menu";
 
@@ -50,6 +51,7 @@ export default () => {
   const [userId, setUserId] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [color, setColor] = useState("transparent");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const happyPress = useKeyPress("h");
   const sadPress = useKeyPress("s");
@@ -98,7 +100,11 @@ export default () => {
             <Heading textAlign="center">Lung Vang</Heading>
           </Box>
           <Spacer m="auto" />
-          <Box m={3} css={{ cursor: "pointer" }}>
+          <Box
+            m={3}
+            css={{ cursor: "pointer" }}
+            onClick={() => setSidebarOpen(true)}
+          >
             <Menu size="48" />
           </Box>
         </Flex>
@@ -116,6 +122,7 @@ export default () => {
         <Box position="absolute" bottom="0" left="16px">
           <Text>Some Text</Text>
         </Box>
+        {sidebarOpen && <Sidebar onClose={() => setSidebarOpen(false)} />}
       </Box>
       <Box>
         <Box>
