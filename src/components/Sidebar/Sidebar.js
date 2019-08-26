@@ -10,7 +10,7 @@ const Sidebar = ({ onClose }) => (
     right="0"
     position="fixed"
     height="100%"
-    width="100%"
+    width={["100%", "50%", "25%"]}
     onClick={onClose}
   >
     <Heading>Sidebar</Heading>

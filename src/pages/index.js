@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 import { Box, Text, Heading, Flex, Image, Spacer } from "../components/AgonKit";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
 import { Menu } from "styled-icons/boxicons-regular/Menu";
@@ -95,8 +96,9 @@ export default () => {
         backgroundRepeat="no-repeat"
         position="relative"
       >
-        <Flex bg={color} position="fixed" top="0" left="0" width="100%">
-          <Box m={3} py={2} height="48px">
+        <Navbar />
+        <Flex bg={color} position="fixed" top="100px" left="0" width="100%">
+          <Box m={3} py={2}>
             <Heading textAlign="center">Lung Vang</Heading>
           </Box>
           <Spacer m="auto" />
