@@ -2,7 +2,7 @@ import React from "react";
 
 import { Flex, Box, Heading, Spacer } from "../AgonKit";
 
-const Navbar = () => (
+const Navbar = props => (
   <Flex
     as="nav"
     top="0"
