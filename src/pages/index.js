@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -13,6 +13,7 @@ import useEventListener from "../hooks/use-event-listener";
 import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
 import useKeyPress from "../hooks/use-key-press";
 import useLockBodyScroll from "../hooks/use-lock-body-scroll";
+import useOnScreen from "../hooks/use-on-screen";
 
 const Counter = React.memo(props => {
   useWhyDidYouUpdate("Counter", props);
@@ -53,6 +54,9 @@ export default () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [color, setColor] = useState("transparent");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const ref = useRef();
+  const onScreen = useOnScreen(ref, "-300px");
 
   const happyPress = useKeyPress("h");
   const sadPress = useKeyPress("s");
@@ -154,6 +158,21 @@ export default () => {
             onClose={() => setModalOpen(false)}
           />
         )}
+      </Box>
+      <Box>
+        <Box height="100vh">
+          <Heading>Scroll down to next section</Heading>
+        </Box>
+        <Box ref={ref} height="100vh" bg={onScreen ? "#23cebd" : "#efefef"}>
+          {onScreen ? (
+            <Box>
+              <Heading>Hey I'm on the screen</Heading>
+              <Image src="https://i.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" />
+            </Box>
+          ) : (
+            <Heading>Scroll down 300px from the top of this section</Heading>
+          )}
+        </Box>
       </Box>
     </Layout>
   );
