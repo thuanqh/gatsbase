@@ -3,11 +3,9 @@ import React, { useState, useCallback, useRef } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-import { Box, Text, Heading, Flex, Image, Spacer } from "../components/AgonKit";
+import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-
-import { Menu } from "styled-icons/boxicons-regular/Menu";
 
 import useEventListener from "../hooks/use-event-listener";
 import useWhyDidYouUpdate from "../hooks/use-why-did-you-update";
@@ -100,20 +98,16 @@ export default () => {
         backgroundRepeat="no-repeat"
         position="relative"
       >
-        <Navbar />
-        <Flex bg={color} position="fixed" top="100px" left="0" width="100%">
-          <Box m={3} py={2}>
-            <Heading textAlign="center">Lung Vang</Heading>
-          </Box>
-          <Spacer m="auto" />
-          <Box
-            m={3}
-            css={{ cursor: "pointer" }}
-            onClick={() => setSidebarOpen(true)}
-          >
-            <Menu size="48" />
-          </Box>
-        </Flex>
+        <Navbar
+          bg={color}
+          top="0"
+          left="0"
+          position="fixed"
+          zIndex="1"
+          width="100%"
+          alignItems="center"
+          onClick={() => setSidebarOpen(true)}
+        />
         <Box
           position="absolute"
           top="50%"
@@ -125,10 +119,19 @@ export default () => {
             Main Page {coords.x}, {coords.y}
           </Heading>
         </Box>
-        <Box position="absolute" bottom="0" left="16px">
-          <Text>Some Text</Text>
-        </Box>
-        {sidebarOpen && <Sidebar onClose={() => setSidebarOpen(false)} />}
+        {sidebarOpen && (
+          <Sidebar
+            color="white"
+            bg="black"
+            top="0"
+            right="0"
+            position="fixed"
+            zIndex="1"
+            height="100%"
+            width={["100%", "50%", "25%"]}
+            onClose={() => setSidebarOpen(false)}
+          />
+        )}
       </Box>
       <Box>
         <Box>
