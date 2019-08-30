@@ -31,6 +31,13 @@ module.exports = {
         icon: `src/assets/images/lungvang-icon.png`
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+        omitGoogleFont: true
+      }
+    }
   ]
 };
