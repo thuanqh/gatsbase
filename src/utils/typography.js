@@ -1,15 +1,14 @@
 import Typography from "typography";
 const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.666,
+  baseFontSize: "16px",
+  baseLineHeight: 1.6,
   headerFontFamily: [
-    "Avenir Next",
-    "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
     "Arial",
+    "system-ui",
     "sans-serif"
   ],
-  bodyFontFamily: ["Georgia", "serif"]
+  bodyFontFamily: ["Segoe UI", "Helvetica", "Arial", "system-ui", "sans-serif"]
 });
 export default typography;
