@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Box, Flex, Heading, Text, Spacer } from "../components/AgonKit";
+import { Box, Flex, Heading, Text, Spacer } from "agonkit";
 
 const Profile = () => {
   return (

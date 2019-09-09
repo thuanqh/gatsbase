@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Heading } from "../AgonKit";
+import { Box, Heading } from "agonkit";
 
 const Header = () => (
   <Box as="header">

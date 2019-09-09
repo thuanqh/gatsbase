@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "styled-icons/boxicons-regular/Menu";
 
-import { Flex, Box, Heading, Spacer } from "../AgonKit";
+import { Flex, Box, Heading, Spacer } from "agonkit";
 
 const Navbar = ({ onClick, ...props }) => (
   <Flex {...props} as="nav">

@@ -1,9 +1,8 @@
 import React, { useState, useCallback, useRef } from "react";
+import { Box, Text, Heading, Flex, Image } from "agonkit";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-
-import { Box, Text, Heading, Flex, Image } from "../components/AgonKit";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
