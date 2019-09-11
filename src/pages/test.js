@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useSpring, animated } from "react-spring";
 import Layout from "../components/Layout";
 
 const Title = styled.h1`
@@ -125,8 +126,14 @@ const Rotate = styled.div`
 `;
 
 const Test = () => {
+  const propsOpacity = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const propsNumber = useSpring({ number: 1, from: { number: 0 } });
+
   return (
     <Layout>
+      <animated.div style={propsOpacity}>I will fade in</animated.div>
+      <animated.span>{propsNumber.number}</animated.span>
+
       <Wrapper>
         <Title>Hello Styled Components!</Title>
       </Wrapper>
