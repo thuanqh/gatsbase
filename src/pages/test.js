@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useSpring, animated } from "react-spring";
+import { Transition } from "react-spring/renderprops";
 import Layout from "../components/Layout";
 
 const Title = styled.h1`
@@ -125,12 +126,68 @@ const Rotate = styled.div`
   font-size: 1.2rem;
 `;
 
+const TestScreen = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${props => props.bgColor};
+`;
+
+function TestScreen1(props) {
+  return <TestScreen bgColor="tomato">Im number 1</TestScreen>;
+}
+
+function TestScreen2(props) {
+  return <TestScreen bgColor="aqua">Im number 2</TestScreen>;
+}
+
+function TestScreen3(props) {
+  return <TestScreen bgColor="navy">Im number 3</TestScreen>;
+}
+
+const testScreens = [TestScreen1, TestScreen2, TestScreen3];
+
+const Container = styled.div`
+  height: 600px;
+  position: relative;
+  width: 100%;
+  & > div {
+    will-change: transform, opacity;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 const Test = () => {
   const propsOpacity = useSpring({ opacity: 1, from: { opacity: 0 } });
   const propsNumber = useSpring({ number: 1, from: { number: 0 } });
+  const [index, setIndex] = useState(0);
 
   return (
     <Layout>
+      <Container
+        onClick={() => (index === 2 ? setIndex(0) : setIndex(index + 1))}
+      >
+        <Transition
+          native
+          reset
+          unique
+          items={index}
+          from={{ opacity: 0, transform: "translate3d(100%, 0 ,0)" }}
+          enter={{ opacity: 1, transform: "translate3d(0%, 0, 0)" }}
+          leave={{ opacity: 0, transform: "translate3d(-50%, 0, 0)" }}
+        >
+          {index => style => (
+            <animated.div style={{ ...style }}>
+              {React.createElement(testScreens[index])}
+            </animated.div>
+          )}
+        </Transition>
+      </Container>
+
       <animated.div style={propsOpacity}>I will fade in</animated.div>
       <animated.span>{propsNumber.number}</animated.span>
 
