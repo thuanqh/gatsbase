@@ -126,39 +126,41 @@ const Rotate = styled.div`
   font-size: 1.2rem;
 `;
 
-const TestScreen = styled.div`
+const TestScreen = styled(animated.div)`
   width: 100%;
   height: 100%;
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.bgColor};
+  color: #fff;
+  font-weight: 800;
+  font-size: 10em;
+  will-change: transform, opacity;
 `;
 
-function TestScreen1(props) {
-  return <TestScreen bgColor="tomato">Im number 1</TestScreen>;
-}
-
-function TestScreen2(props) {
-  return <TestScreen bgColor="aqua">Im number 2</TestScreen>;
-}
-
-function TestScreen3(props) {
-  return <TestScreen bgColor="navy">Im number 3</TestScreen>;
-}
-
-const testScreens = [TestScreen1, TestScreen2, TestScreen3];
+const testScreens = [
+  style => (
+    <TestScreen style={{ ...style, background: "#b3FFBD" }}>
+      Im number 1
+    </TestScreen>
+  ),
+  style => (
+    <TestScreen style={{ ...style, background: "#B2DBBF" }}>
+      Im number 2
+    </TestScreen>
+  ),
+  style => (
+    <TestScreen style={{ ...style, background: "#12DBBF" }}>
+      Im number 3
+    </TestScreen>
+  )
+];
 
 const Container = styled.div`
   height: 600px;
   position: relative;
   width: 100%;
-  & > div {
-    will-change: transform, opacity;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 const Test = () => {
@@ -172,19 +174,14 @@ const Test = () => {
         onClick={() => (index === 2 ? setIndex(0) : setIndex(index + 1))}
       >
         <Transition
-          native
           reset
           unique
           items={index}
-          from={{ opacity: 0, transform: "translate3d(100%, 0 ,0)" }}
-          enter={{ opacity: 1, transform: "translate3d(0%, 0, 0)" }}
-          leave={{ opacity: 0, transform: "translate3d(-50%, 0, 0)" }}
+          from={{ opacity: 0, transform: "translate3d(100%,0,0)" }}
+          enter={{ opacity: 1, transform: "translate3d(0%,0,0)" }}
+          leave={{ opacity: 0, transform: "translate3d(-50%,0,0)" }}
         >
-          {index => style => (
-            <animated.div style={{ ...style }}>
-              {React.createElement(testScreens[index])}
-            </animated.div>
-          )}
+          {index => testScreens[index]}
         </Transition>
       </Container>
 
