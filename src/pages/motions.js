@@ -2,8 +2,7 @@ import React from "react";
 import { Spring, animated, interpolate } from "react-spring/renderprops";
 import { Box, Heading } from "agonkit";
 import Layout from "../components/Layout";
-import Morphing from "../components/Animation/Morphing";
-import SimpleSpring from "../components/Animation/SimpleSpring";
+import { Morphing, SimpleSpring } from "../components/Animation";
 
 const TRIANGLE = "M20,380 L380,380 L380,380 L200,20 L20,380 Z";
 const RECTANGLE = "M20,20 L20,380 L380,380 L380,20 L20,20 Z";

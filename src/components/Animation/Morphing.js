@@ -19,7 +19,7 @@ for (let i = 0; i < paths.length; i++) {
   );
 }
 
-export default class Morphing extends React.Component {
+export class Morphing extends React.Component {
   state = { interpolators, index: 0 };
   goNext = () =>
     this.setState(({ index, interpolators }) => ({

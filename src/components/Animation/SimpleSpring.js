@@ -15,7 +15,7 @@ const styles = {
   shape: { width: 300, height: 300, willChange: "transform" }
 };
 
-export default class SimpleSpring extends React.Component {
+export class SimpleSpring extends React.Component {
   state = { toggle: true };
   toggle = () => this.setState(state => ({ toggle: !state.toggle }));
   render() {
