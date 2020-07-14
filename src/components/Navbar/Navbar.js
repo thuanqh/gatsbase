@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "styled-icons/boxicons-regular/Menu";
+import { Menu } from "@styled-icons/boxicons-regular/Menu";
 
 import { Flex, Box, Heading, Spacer } from "agonkit";
 
