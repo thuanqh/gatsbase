@@ -12,7 +12,7 @@ import useKeyPress from "../hooks/use-key-press";
 import useLockBodyScroll from "../hooks/use-lock-body-scroll";
 import useOnScreen from "../hooks/use-on-screen";
 
-const Counter = React.memo(props => {
+const Counter = React.memo((props) => {
   useWhyDidYouUpdate("Counter", props);
   return (
     <Box color="red.900" fontSize="3rem">
