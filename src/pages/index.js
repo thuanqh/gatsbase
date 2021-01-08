@@ -44,7 +44,7 @@ function Modal({ title, content, onClose }) {
   );
 }
 
-export default () => {
+const Index = () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [count, setCount] = useState(0);
   const [userId, setUserId] = useState(0);
@@ -179,3 +179,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Index;
