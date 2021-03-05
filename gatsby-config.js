@@ -10,6 +10,7 @@ module.exports = {
       resolve: "gatsby-plugin-styled-components",
       option: {},
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

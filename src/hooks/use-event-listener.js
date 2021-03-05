@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function useEventListener(eventName, handler, element = global) {
+export default function useEventListener(eventName, handler, element = window) {
   const savedHandler = useRef();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function useEventListener(eventName, handler, element = global) {
     const isSupported = element && element.addEventListener;
     if (!isSupported) return;
 
-    const eventListener = event => savedHandler.current(event);
+    const eventListener = (event) => savedHandler.current(event);
     element.addEventListener(eventName, eventListener);
 
     return () => {
