@@ -9,7 +9,7 @@ export default function useOnScreen(ref, rootMargin = "0px") {
         setIntersecting(entry.isIntersecting);
       },
       {
-        rootMargin
+        rootMargin,
       }
     );
     if (ref.current) {
